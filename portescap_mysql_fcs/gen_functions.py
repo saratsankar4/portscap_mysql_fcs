@@ -17,7 +17,6 @@ db_details = cfg('db')
 
 mysqldb_details = cfg('mysql')
 
-ftp = cfg('sftp')
 
 def get_batchqr(f_info):
     print(f_info['station_id'])

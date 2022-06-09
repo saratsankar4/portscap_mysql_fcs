@@ -30,9 +30,9 @@ def start_engine(conf):
             database=param_dict['database'],
         )
 
-        ssl_args = dict(options = '-csearch_path={}'.format('quality') , sslmode = "verify-ca" ,
-                        sslcert =f"{certi_path}""//client-cert.pem", sslkey = f"{certi_path}""//client-key.pem" ,
-                        sslrootcert = f"{certi_path}""//ca-cert.pem")
+        ssl_args = dict(options='-csearch_path={}'.format('bodhee'), sslmode="verify-ca",
+                        sslcert=f"{certi_path}""//client-cert.pem", sslkey=f"{certi_path}""//client-key.pem",
+                        sslrootcert=f"{certi_path}""//ca-cert.pem")
 
         engine = create_engine(
             engine_string,
