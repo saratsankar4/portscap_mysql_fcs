@@ -20,7 +20,7 @@ def start_engine(conf):
         # Read DB details from config file
         param_dict = conf
 
-        certi_path=r'C:\Users\Admin\Documents\sarat\Tools\Portescap-ssl'
+        certi_path=r'/conf'
 
         engine_string = "postgresql+psycopg2://{user}:{password}@{host}:{port}/{database}".format(
             user=param_dict['user'],
@@ -30,9 +30,9 @@ def start_engine(conf):
             database=param_dict['database'],
         )
 
-        ssl_args = dict(options='-csearch_path={}'.format('bodhee'), sslmode="verify-ca",
-                        sslcert=f"{certi_path}""//client-cert.pem", sslkey=f"{certi_path}""//client-key.pem",
-                        sslrootcert=f"{certi_path}""//ca-cert.pem")
+        ssl_args = dict(options = '-csearch_path={}'.format('filedata') , sslmode = "verify-ca" ,
+                        sslcert =f"{certi_path}""/Client-sslcert.crt", sslkey = f"{certi_path}""/client.key" ,
+                        sslrootcert = f"{certi_path}""/root-ssl.crt")
 
         engine = create_engine(
             engine_string,
